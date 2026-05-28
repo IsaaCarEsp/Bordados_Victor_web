@@ -153,47 +153,58 @@
         }
     </style>
     <!-- Material Symbols -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"rel="stylesheet"/>
 </head>
 
 <body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
     <!-- 1. FIXED NAVBAR -->
-    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-primary/80 backdrop-blur-md shadow-sm transition-all duration-300 ease-in-out py-4"
-        id="navbar">
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-primary/80 backdrop-blur-md shadow-sm transition-all duration-300 ease-in-out py-4"id="navbar">
         <div class="flex justify-between items-center px-gutter max-w-container-max mx-auto">
             <a class="flex items-center gap-2 group" href="#">
                 <img alt="Victor Logo" class="h-10 w-10 object-contain transition-transform group-hover:scale-105"src="LOGO VICTOR.jpeg " class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary font-bold hidden sm:block" />
-
                 Bordados<span class="text-accent">Victor</span>
             </a>
+            <!-- Desktop Links -->
             <div class="hidden md:flex gap-8 items-center">
-                <a class="font-body-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-tertiary-container transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-                    href="#galeria">Galería</a>
-                <a class="font-body-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-tertiary-container transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-                    href="#servicios">Servicios</a>
-                <a class="font-body-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-tertiary-container transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-                    href="#como-funciona">¿Cómo funciona?</a>
+                <a class="font-body-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-tertiary-container transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"href="#galeria">Galería</a>
+                <a class="font-body-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-tertiary-container transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"href="#servicios">Servicios</a>
+                <a class="font-body-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-tertiary-container transition-all duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"href="#como-funciona">¿Cómo funciona?</a>
             </div>
-            <a class="hidden md:inline-block bg-error text-on-error font-label-md uppercase px-6 py-3 rounded hover:opacity-90 transition-opacity font-bold"
-                href="https://wa.me/5211234567890" target="_blank">
+            <a class="hidden md:inline-block bg-error text-on-error font-label-md uppercase px-6 py-3 rounded hover:opacity-90 transition-opacity font-bold"href="https://wa.me/5211234567890" target="_blank">
                 Cotizar
             </a>
             <!-- Mobile Menu Button (Icon only, actual menu functionality requires JS to toggle class, keeping it simple here) -->
-            <button class="md:hidden text-primary p-2">
-                <span class="material-symbols-outlined">menu</span>
+            <button id="menu-btn" class="block md:hidden border border-yellow-600 p-2 rounded">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
             </button>
+            <!-- MENÚ DESPLEGABLE MÓVIL (Nuevo) -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white w-full border-b border-gray-200">
+                <div class="flex flex-col px-4 py-3 space-y-3">
+                    <a href="#galeria" class="text-gray-700 hover:text-yellow-600 font-medium">GALERÍA</a>
+                    <a href="#servicios" class="text-gray-700 hover:text-yellow-600 font-medium">SERVICIOS</a>
+                    <a href="#funcionamiento" class="text-gray-700 hover:text-yellow-600 font-medium">¿CÓMO FUNCIONA?</a>
+                </div>
+            </div>
+            <!-- Script para la funcionalidad del menú móvil -->
+            <script>
+            // 1. Obtenemos referencias al botón y al menú móvil
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // 2. Escuchamos el evento de clic en el botón
+            menuBtn.addEventListener('click', () => {
+            // 3. Al hacer clic, alternamos la clase 'hidden' en el menú móvil
+            mobileMenu.classList.toggle('hidden');
+            });
+            </script>
         </div>
     </nav>
     <!-- 2. HERO -->
-    <section
-        class="relative pt-[120px] pb-section-padding-mobile md:pb-section-padding-desktop px-gutter min-h-screen flex items-center bg-stitch-pattern overflow-hidden">
-        <div
-            class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center relative z-10">
+    <section class="relative pt-[120px] pb-section-padding-mobile md:pb-section-padding-desktop px-gutter min-h-screen flex items-center bg-stitch-pattern overflow-hidden">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center relative z-10">
             <!-- Left Column -->
             <div class="fade-up order-2 lg:order-1">
                 <div class="inline-flex items-center gap-2 bg-surface-container-highest px-4 py-1.5 rounded-full mb-6">
@@ -210,13 +221,11 @@
                     tecnología de punta con el cuidado del bordado tradicional.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <a class="bg-wa-green text-white font-label-md uppercase px-8 py-4 rounded-lg flex items-center justify-center gap-2 hover:shadow-wa-glow transition-all duration-300 font-bold group"
-                        href="https://wa.me/5211234567890" target="_blank">
+                    <a class="bg-wa-green text-white font-label-md uppercase px-8 py-4 rounded-lg flex items-center justify-center gap-2 hover:shadow-wa-glow transition-all duration-300 font-bold group"href="https://wa.me/5211234567890" target="_blank">
                         <span class="material-symbols-outlined group-hover:scale-110 transition-transform">chat</span>
                         COTIZAR POR WHATSAPP
                     </a>
-                    <a class="border border-accent text-primary-container font-label-md uppercase px-8 py-4 rounded-lg flex items-center justify-center hover:bg-accent/5 transition-colors font-bold"
-                        href="#galeria">
+                    <a class="border border-accent text-primary-container font-label-md uppercase px-8 py-4 rounded-lg flex items-center justify-center hover:bg-accent/5 transition-colors font-bold" href="#galeria">
                         Ver trabajos ↓
                     </a>
                 </div>
@@ -255,8 +264,7 @@
                     <p class="font-body-md text-sm font-medium text-primary">En producción</p>
                 </div>
             </div>
-            <div
-                class="absolute bottom-20 -right-6 bg-surface p-4 rounded-lg shadow-ambient float-animation-delayed border-t-2 border-accent flex items-center gap-3">
+            <div class="absolute bottom-20 -right-6 bg-surface p-4 rounded-lg shadow-ambient float-animation-delayed border-t-2 border-accent flex items-center gap-3">
                 <span class="material-symbols-outlined text-wa-green">local_shipping</span>
                 <div>
                     <p class="font-label-md text-xs text-on-surface-variant">Entrega estimada</p>
@@ -276,25 +284,21 @@
             <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 h-auto md:h-[600px] fade-up">
                 <!-- Large Left -->
                 <div class="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-lg shadow-ambient cursor-pointer">
-                    <img alt="Eagle embroidery"class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8PfTlZwl1XFctCVHaoTvsSsbO1u11SGN2bo755LeI7qDFtKAt4lhVgTSvv0mqC42_ETaOK0W3BJFMrblyLSHYRir5l9Q5lhUvbPB8qqiONwiNJ0kcQplNcREImlIGif7VgmFGRJYLfsEPnFCAAeSx9u78-4v5OXZ8lEc3SediYnFaSfZFSrzvZyqKbtuLCENcMq5nXgznlAHFsFYG_r9DLhii6rF8CrOK9KGtvJ37SAcqtB0o3Vz8AzywPT838jBjEPmVvhofylE" />
+                    <img alt="Eagle embroidery"class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"src="OSO T.jpeg"loading="lazy"/>
                     <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center flex-col p-6 text-center">
-                        <h3 class="font-headline-sm text-on-primary mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"> Chamarras Premium</h3>
+                        <h3 class="font-headline-sm text-on-primary mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"> Chamarras</h3>
                         <p class="font-body-md text-surface-variant transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Bordado de alta densidad</p>
                     </div>
                 </div>
                 <!-- Smaller Items -->
-                <div
-                    class="group relative overflow-hidden rounded-lg shadow-ambient cursor-pointer h-[250px] md:h-auto">
-                    <img alt="Red cap embroidery"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQn4sOYiJfuZf07P5c_bAokmu0ov100JjpfRTJzXOQ8lnR2ceZZ-doxlYTKxAwuOL7Lood589KAR-IuWH-fCx-YhG5mx-AiB8V_I8BwfLUMMb_8EXXWWDMneC-4gAjwgW4GQadsdzsQ90_l3AOe8M9HcptNCqMWq3ViwcRU7ptINWrYxhTvmJC-c6pGojeQJGzP4PaSnjgHmJLq1x25DEKJww8kXcJR0wuFBd32YtEpl0SNSZFjRIadm6XmISFyLNiPjsZ2jtNvGs" />
-                    <div
-                        class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <div class="group relative overflow-hidden rounded-lg shadow-ambient cursor-pointer h-[250px] md:h-auto">
+                    <img alt="Red cap embroidery"class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"src=""loading="lazy"/>
+                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                         <h4 class="font-body-lg text-on-primary font-medium">Gorras Corporativas</h4>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-lg shadow-ambient cursor-pointer h-[250px] md:h-auto">
-                    <img alt="Floral patch"class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Ucv-w77fWhG6mOENVqFXTHCHvHPlEmxkL-28Hy9WrTErnex33G6evnYXqOyT88tnEUAxZhlydrnR2tVer6j3Cgcxv2gGBSb0VccZCsnu5GeXTVAvL23vgHYB_V5DlFpjzTdQcviKf1uU2J1mDDrpf6HpVB9H_YCbGImM4SD7Yct95scGlPn5F-eIBQ7M1v5OQEvVnxaTmIYQ7DzRSUNyOnh8rSoC6Os8cCKV-JOxeItitdE0PZ4MAmql54RdXXQsW73TZZ8Mq-Q"loading="lazy"/>
+                    <img alt="Floral patch"class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"src=""loading="lazy"/>
                     <div
                         class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                         <h4 class="font-body-lg text-on-primary font-medium">Parches Personalizados</h4>
@@ -302,7 +306,7 @@
                 </div>
                 <div class="group relative overflow-hidden rounded-lg shadow-ambient cursor-pointer h-[250px] md:h-auto md:hidden">
                     <!-- Hide on desktop to keep 2x2 grid layout clean, or adjust grid -->
-                    <img alt="Towel monogram"class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqRpR_KTHwpY8BVrt5gcfraAn1CDOvLeKlRR_zhWdoBinknO7Zejz5fBagLrC-DGZ_QfynkZB15b6u5uhsSyXNuRceT4zroYkGsKKKDg9SdPxdXO6RFQHzMRwSCI8vVQmYkibowuV0a1woiezQc25sf9SyXrOgqdytlWxbRR37mKRPUQZYEn9qFrmOPDPYQTfc2sbB3fbO9M7qXr3JLCMGgX0dhYwUH7X7I0ANAiadJ2MPDhp9ib5vVGCI8euUey3ffQ_nPdiZt5E"loading="lazy"/>
+                    <img alt="Towel monogram"class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"src=""loading="lazy"/>
                 </div>
             </div>
             <div class="mt-8 flex justify-center fade-up">
@@ -325,52 +329,44 @@
                     <h3 class="font-body-lg font-medium text-primary mb-2">Playeras</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">Polo y cuello redondo</p>
                 </div>
-                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"
-                    style="transition-delay: 50ms;">
+                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"style="transition-delay: 50ms;">
                     <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧥</span>
                     <h3 class="font-body-lg font-medium text-primary mb-2">Chamarras</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">Institucionales y moda</p>
                 </div>
-                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"
-                    style="transition-delay: 100ms;">
+                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"style="transition-delay: 100ms;">
                     <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧶</span>
                     <h3 class="font-body-lg font-medium text-primary mb-2">Sudaderas</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">Bordado frontal y espalda</p>
                 </div>
-                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"
-                    style="transition-delay: 150ms;">
+                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"style="transition-delay: 150ms;">
                     <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">🏖️</span>
                     <h3 class="font-body-lg font-medium text-primary mb-2">Toallas</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">Hotelería y spa</p>
                 </div>
-                <div
-                    class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group">
+                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group">
                     <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧢</span>
                     <h3 class="font-body-lg font-medium text-primary mb-2">Gorras</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">3D y plano</p>
                 </div>
-                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"
-                    style="transition-delay: 50ms;">
+                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"style="transition-delay: 50ms;">
                     <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">👔</span>
                     <h3 class="font-body-lg font-medium text-primary mb-2">Uniformes</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">Empresariales y médicos</p>
                 </div>
-                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"
-                    style="transition-delay: 100ms;">
+                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"style="transition-delay: 100ms;">
                     <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">🎒</span>
                     <h3 class="font-body-lg font-medium text-primary mb-2">Mochilas</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">Promocionales</p>
                 </div>
-                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"
-                    style="transition-delay: 150ms;">
+                <div class="bg-surface-container-lowest p-6 rounded-lg shadow-ambient border-t-2 border-transparent hover:border-accent hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center fade-up cursor-pointer group"style="transition-delay: 150ms;">
                     <span class="text-4xl mb-4 group-hover:scale-110 transition-transform">🛡️</span>
                     <h3 class="font-body-lg font-medium text-primary mb-2">Parches</h3>
                     <p class="font-body-md text-sm text-on-surface-variant">Termoadhesivos o velcro</p>
                 </div>
             </div>
             <div class="flex justify-center fade-up">
-                <a class="bg-wa-green text-white font-label-md uppercase px-8 py-4 rounded-lg flex items-center justify-center gap-2 hover:shadow-wa-glow transition-all duration-300 font-bold group"
-                    href="https://wa.me/5211234567890" target="_blank">
+                <a class="bg-wa-green text-white font-label-md uppercase px-8 py-4 rounded-lg flex items-center justify-center gap-2 hover:shadow-wa-glow transition-all duration-300 font-bold group"href="https://wa.me/5211234567890" target="_blank">
                     <span class="material-symbols-outlined group-hover:scale-110 transition-transform">chat</span>
                     SOLICITAR CATÁLOGO
                 </a>
@@ -378,9 +374,7 @@
         </div>
     </section>
     <!-- 5. HOW IT WORKS -->
-    <section
-        class="py-section-padding-mobile md:py-section-padding-desktop px-gutter bg-surface-bright relative overflow-hidden"
-        id="como-funciona">
+    <section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter bg-surface-bright relative overflow-hidden"id="como-funciona">
         <div class="max-w-container-max mx-auto relative z-10">
             <div class="text-center mb-20 fade-up">
                 <span class="font-label-md text-accent uppercase tracking-wider mb-2 block">Proceso</span>
@@ -439,8 +433,7 @@
             <p class="font-body-lg text-surface-variant mb-10">
                 Habla con un asesor por WhatsApp. Te respondemos en menos de 5 minutos.
             </p>
-            <a class="inline-flex items-center gap-3 bg-wa-green text-white font-label-md uppercase px-10 py-5 rounded-full hover:shadow-wa-glow transition-all duration-300 transform hover:-translate-y-1 font-bold text-lg"
-                href="https://wa.me/5211234567890" target="_blank">
+            <a class="inline-flex items-center gap-3 bg-wa-green text-white font-label-md uppercase px-10 py-5 rounded-full hover:shadow-wa-glow transition-all duration-300 transform hover:-translate-y-1 font-bold text-lg"href="https://wa.me/5211234567890" target="_blank">
                 <span class="material-symbols-outlined text-3xl">chat</span>
                 INICIAR CHAT AHORA
             </a>
